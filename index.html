@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOHO RESTAURANT | Mediterranean & Middle Eastern Brooklyn</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        med: {
+                            base: '#FDFBF7',
+                            card: '#FFFFFF',
+                            amber: '#D97706',
+                            gold: '#B45309',
+                            sand: '#F5EFE6',
+                            dark: '#1C1917',
+                            muted: '#78716C'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-med-base text-med-dark font-sans antialiased selection:bg-med-amber selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-med-amber text-white flex items-center justify-center font-bold text-xl shadow-md">
+                    Z
+                </div>
+                <span class="text-2xl font-extrabold font-serif tracking-wider text-med-dark">ZOHO</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-med-muted">
+                <a href="#about" class="hover:text-med-amber transition">Our Story</a>
+                <a href="#starters" class="hover:text-med-amber transition">Starters</a>
+                <a href="#mains" class="hover:text-med-amber transition">Popular Mains</a>
+                <a href="#gallery" class="hover:text-med-amber transition">Gallery</a>
+                <a href="#location" class="hover:text-med-amber transition">Location</a>
+            </nav>
+
+            <button onclick="openOrderModal('General Order / Table Reservation')" class="bg-med-amber hover:bg-amber-700 text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition shadow-md flex items-center gap-2">
+                <i class="fa-solid fa-utensils"></i> Order Online
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-med-sand/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="lg:col-span-7">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-med-amber text-xs font-bold uppercase tracking-wider mb-6 border border-amber-200">
+                    <i class="fa-solid fa-circle text-[8px]"></i> Authentic Mediterranean • Brooklyn, NY
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-bold font-serif text-med-dark leading-tight mb-6">
+                    Taste the Authentic Mediterranean Tradition
+                </h1>
+                <p class="text-base text-med-muted font-normal leading-relaxed mb-8 max-w-xl">
+                    Freshly grilled kebabs, slow-roasted shawarma, crisp falafels, and signature Mediterranean platters prepared with 100% Halal fresh ingredients.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#starters" class="bg-med-amber hover:bg-amber-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-amber-600/20 transition flex items-center gap-2 text-xs uppercase tracking-wider">
+                        <span>Explore Starters</span> <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <button onclick="openOrderModal('Table Reservation')" class="bg-white hover:bg-stone-50 border border-stone-300 text-med-dark font-bold px-8 py-4 rounded-xl transition text-xs uppercase tracking-wider">
+                        Book A Table
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Image Display -->
+            <div class="lg:col-span-5">
+                <div class="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl h-[440px] group">
+                    <img src="https://lh3.googleusercontent.com/d/198deEgBqaVf0c0KVqjNT-s7RbzkTJQjP" alt="ZOHO Front Atmosphere" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-stone-200 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-bold text-med-muted uppercase">ZOHO Restaurant</div>
+                            <div class="text-sm font-bold text-med-dark">Brooklyn, New York</div>
+                        </div>
+                        <span class="text-xs bg-amber-100 text-med-amber font-bold px-3 py-1 rounded-full">4.8 ★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Info Banner -->
+    <section class="border-y border-stone-200 bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="text-3xl font-extrabold text-med-amber font-serif">4.8 ★</div>
+                <div class="text-xs text-med-muted mt-1 uppercase font-semibold">Google Reviews</div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-med-dark font-serif">100% Halal</div>
+                <div class="text-xs text-med-muted mt-1 uppercase font-semibold">Fresh Ingredients</div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-med-dark font-serif">Brooklyn</div>
+                <div class="text-xs text-med-muted mt-1 uppercase font-semibold">New York City</div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-med-amber font-serif">Dine-In & Pickup</div>
+                <div class="text-xs text-med-muted mt-1 uppercase font-semibold">Online Ordering</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pure Text Starter Menu Section -->
+    <section id="starters" class="py-24 max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-bold uppercase tracking-widest text-med-amber">Crispy & Delicious</span>
+            <h2 class="text-3xl sm:text-4xl font-bold font-serif text-med-dark mt-2">STARTER MENU</h2>
+            <p class="text-med-muted text-xs mt-2">Handcrafted appetisers prepared fresh for your table.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <!-- Item 1 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition flex justify-between items-center gap-4">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-med-amber bg-amber-50 px-2 py-0.5 rounded">01</span>
+                        <h3 class="text-base font-bold text-med-dark">CRISPY SHRIMP</h3>
+                    </div>
+                    <p class="text-xs text-med-muted mt-2">Crispy shrimp served with sweet chili sauce.</p>
+                </div>
+                <div class="text-right shrink-0">
+                    <div class="text-lg font-bold text-med-gold mb-2">$24.00</div>
+                    <button onclick="openOrderModal('Order: Crispy Shrimp ($24.00)')" class="bg-med-amber hover:bg-amber-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition">
+                        + Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition flex justify-between items-center gap-4">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-med-amber bg-amber-50 px-2 py-0.5 rounded">02</span>
+                        <h3 class="text-base font-bold text-med-dark">FRIED CALAMARI</h3>
+                    </div>
+                    <p class="text-xs text-med-muted mt-2">Served with creamy chipotle sauce.</p>
+                </div>
+                <div class="text-right shrink-0">
+                    <div class="text-lg font-bold text-med-gold mb-2">$22.00</div>
+                    <button onclick="openOrderModal('Order: Fried Calamari ($22.00)')" class="bg-med-amber hover:bg-amber-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition">
+                        + Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition flex justify-between items-center gap-4">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-med-amber bg-amber-50 px-2 py-0.5 rounded">03</span>
+                        <h3 class="text-base font-bold text-med-dark">CHICKEN WINGS</h3>
+                    </div>
+                    <p class="text-xs text-med-muted mt-2">Culotte tenders and sweet chili sauce.</p>
+                </div>
+                <div class="text-right shrink-0">
+                    <div class="text-lg font-bold text-med-gold mb-2">$12.00</div>
+                    <button onclick="openOrderModal('Order: Chicken Wings ($12.00)')" class="bg-med-amber hover:bg-amber-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition">
+                        + Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition flex justify-between items-center gap-4">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-med-amber bg-amber-50 px-2 py-0.5 rounded">04</span>
+                        <h3 class="text-base font-bold text-med-dark">BUFFALO WINGS</h3>
+                    </div>
+                    <p class="text-xs text-med-muted mt-2">Buffalo wings with creamy blue cheese dip.</p>
+                </div>
+                <div class="text-right shrink-0">
+                    <div class="text-lg font-bold text-med-gold mb-2">$14.00</div>
+                    <button onclick="openOrderModal('Order: Buffalo Wings ($14.00)')" class="bg-med-amber hover:bg-amber-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition">
+                        + Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition flex justify-between items-center gap-4 md:col-span-2">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-med-amber bg-amber-50 px-2 py-0.5 rounded">05</span>
+                        <h3 class="text-base font-bold text-med-dark">GUACAMOLE</h3>
+                    </div>
+                    <p class="text-xs text-med-muted mt-2">Fresh avocado, cilantro, lime juice, served with pita chips.</p>
+                </div>
+                <div class="text-right shrink-0">
+                    <div class="text-lg font-bold text-med-gold mb-2">$12.00</div>
+                    <button onclick="openOrderModal('Order: Guacamole ($12.00)')" class="bg-med-amber hover:bg-amber-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition">
+                        + Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Main Dishes Section -->
+    <section id="mains" class="py-24 bg-med-sand/40 border-y border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-med-amber">Chef Recommendations</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-serif text-med-dark mt-2">POPULAR MAINS</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dish 1 -->
+                <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://lh3.googleusercontent.com/d/1FNb_iPhU4Vdrk8IBeelBVGC2LvieuiCq" alt="Chicken Kebab Platter" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-med-dark mb-2">Special Chicken Kebab Platter</h3>
+                        <p class="text-med-muted text-xs mb-6 leading-relaxed">Tender marinated chicken kebabs served with aromatic rice, grilled veggies, and garlic sauce.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-stone-100">
+                            <span class="text-lg font-bold text-med-amber">$18.99</span>
+                            <button onclick="openOrderModal('Order: Special Chicken Kebab Platter')" class="text-xs bg-med-dark hover:bg-black text-white px-4 py-2 rounded-xl transition font-bold">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 2 -->
+                <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://lh3.googleusercontent.com/d/1la4Fdl4pK-zm4Ccp8fAFXj6LZYR8Ngby" alt="Lamb Shawarma Rice Bowl" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-med-dark mb-2">Lamb Shawarma & Rice Bowl</h3>
+                        <p class="text-med-muted text-xs mb-6 leading-relaxed">Slow-roasted spiced lamb slices over Mediterranean yellow rice, pickled turnip, and tahini drizzle.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-stone-100">
+                            <span class="text-lg font-bold text-med-amber">$19.50</span>
+                            <button onclick="openOrderModal('Order: Lamb Shawarma & Rice Bowl')" class="text-xs bg-med-dark hover:bg-black text-white px-4 py-2 rounded-xl transition font-bold">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 3 -->
+                <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://lh3.googleusercontent.com/d/1V4XuRbnVSPFdmdys8W1gqfyVd4fQkiZT" alt="Crispy Falafel Combo" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-med-dark mb-2">Crispy Falafel & Hummus Combo</h3>
+                        <p class="text-med-muted text-xs mb-6 leading-relaxed">Handmade fried falafel balls served with smooth house hummus, fresh pita bread, and salad.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-stone-100">
+                            <span class="text-lg font-bold text-med-amber">$14.99</span>
+                            <button onclick="openOrderModal('Order: Falafel & Hummus Combo')" class="text-xs bg-med-dark hover:bg-black text-white px-4 py-2 rounded-xl transition font-bold">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Grid (7 Authentic Photos Only) -->
+    <section id="gallery" class="py-24 max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-bold uppercase tracking-widest text-med-amber">Visual Feast</span>
+            <h2 class="text-3xl sm:text-4xl font-bold font-serif text-med-dark mt-2">ZOHO GALLERY</h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm group">
+                <img src="https://lh3.googleusercontent.com/d/1e1xzAdWgpbvYgvxrw5CyIpwk6bwTOmDB" alt="Gallery Dish 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm group">
+                <img src="https://lh3.googleusercontent.com/d/1d0Vw5bFLyjAS_RYVaDskXUXYmQs-xSWl" alt="Gallery Dish 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm group">
+                <img src="https://lh3.googleusercontent.com/d/1jRjfbzYawZZMvoPXqiwdqmTdL5yBwUpl" alt="Gallery Dish 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm group">
+                <img src="https://lh3.googleusercontent.com/d/1m5B9ML_RcY1pv_NgrhNoQzQMfSuawrs0" alt="Gallery Dish 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm group">
+                <img src="https://lh3.googleusercontent.com/d/1V3F9vr2kWXo7Op2ymRztJm0yRdTEVbg8" alt="Gallery Dish 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm group">
+                <img src="https://lh3.googleusercontent.com/d/18Kyt46e2vVf76L8vF_4pJKMIe7EFV-A1" alt="Gallery Dish 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm group">
+                <img src="https://lh3.googleusercontent.com/d/1FNb_iPhU4Vdrk8IBeelBVGC2LvieuiCq" alt="Gallery Dish 7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Google Maps Section -->
+    <section id="location" class="py-24 bg-white border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-med-amber">Location & Contact</span>
+                    <h2 class="text-3xl font-bold font-serif text-med-dark mt-2 mb-6">Find ZOHO Brooklyn</h2>
+                    
+                    <div class="space-y-6 text-med-muted text-xs">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-med-amber shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-med-dark mb-0.5">Address</strong>
+                                ZOHO RESTAURANT, Brooklyn, New York, NY, United States
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-med-amber shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-med-dark mb-0.5">Operating Hours</strong>
+                                Open Everyday: 11:00 AM – 10:30 PM
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-med-amber shrink-0">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-med-dark mb-0.5">Services</strong>
+                                Dine-in • Takeout • Online Delivery Available
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=ZOHO%20RESTAURANT&query_place_id=ChIJxZRlfgvzwokREiAT0dt29IQ" 
+                       target="_blank" 
+                       class="inline-flex items-center gap-2 mt-8 bg-med-amber hover:bg-amber-700 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Google Maps
+                    </a>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="lg:col-span-2 rounded-3xl overflow-hidden border border-stone-200 shadow-xl h-96">
+                    <iframe 
+                        class="w-full h-full border-0 opacity-85 hover:opacity-100 transition duration-500" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280006547!2d-74.0059728!3d40.650002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25b0b7e6594c5%3A0x84f4761bd0d12012!2sZOHO%20RESTAURANT!5e0!3m2!1sen!2sus!4v1700000000000" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white border border-stone-200 p-8 rounded-3xl max-w-lg w-full relative shadow-2xl">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-stone-400 hover:text-black text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-bold font-serif text-med-dark mb-1">Place Order / Reservation</h3>
+            <p class="text-xs text-med-muted mb-6">ZOHO RESTAURANT • Brooklyn, New York</p>
+
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-med-dark font-bold uppercase tracking-wider mb-1">Selected Dish / Order Type</label>
+                    <input type="text" id="orderItemInput" class="w-full bg-stone-50 border border-stone-200 px-4 py-2.5 rounded-xl text-med-dark font-medium focus:border-med-amber outline-none" readonly>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-med-dark font-bold uppercase tracking-wider mb-1">Your Name</label>
+                        <input type="text" required placeholder="John Doe" class="w-full bg-stone-50 border border-stone-200 px-4 py-2.5 rounded-xl text-med-dark focus:border-med-amber outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-med-dark font-bold uppercase tracking-wider mb-1">Phone Number</label>
+                        <input type="tel" required placeholder="+1 (555) 000-0000" class="w-full bg-stone-50 border border-stone-200 px-4 py-2.5 rounded-xl text-med-dark focus:border-med-amber outline-none">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-med-dark font-bold uppercase tracking-wider mb-1">Date</label>
+                        <input type="date" required class="w-full bg-stone-50 border border-stone-200 px-4 py-2.5 rounded-xl text-med-dark focus:border-med-amber outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-med-dark font-bold uppercase tracking-wider mb-1">Time / Guests</label>
+                        <input type="text" required placeholder="7:00 PM (2 Guests)" class="w-full bg-stone-50 border border-stone-200 px-4 py-2.5 rounded-xl text-med-dark focus:border-med-amber outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-med-dark font-bold uppercase tracking-wider mb-1">Special Requests</label>
+                    <textarea rows="3" placeholder="Dietary requests or notes..." class="w-full bg-stone-50 border border-stone-200 px-4 py-2.5 rounded-xl text-med-dark focus:border-med-amber outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-med-amber hover:bg-amber-700 text-white font-bold uppercase tracking-widest transition rounded-xl text-xs mt-2">
+                    Confirm & Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-stone-200 py-8 text-center text-xs text-med-muted bg-med-base">
+        <p>© 2026 ZOHO RESTAURANT. All Rights Reserved. | Brooklyn, New York</p>
+    </footer>
+
+    <!-- JavaScript Modal Logic -->
+    <script>
+        function openOrderModal(itemName) {
+            document.getElementById('orderItemInput').value = itemName;
+            document.getElementById('orderModal').classList.remove('hidden');
+        }
+
+        function closeOrderModal() {
+            document.getElementById('orderModal').classList.add('hidden');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Thank you! Your request/order has been received. ZOHO RESTAURANT team will contact you shortly.');
+            closeOrderModal();
+        }
+    </script>
+
+</body>
+</html>
